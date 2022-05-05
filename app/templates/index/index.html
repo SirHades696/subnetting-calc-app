@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% block title %}IP Subnetting and VLSM{% endblock %} Calc App
+{% endblock %}
+{% block content %}
+    <div class="contenedor-img">
+        <img class="imagen"
+             src=" {{ url_for('static', filename='/img/connection512.png') }}">
+    </div>
+    <div class="contenedor-btns">
+        <a class="button" href="{{ url_for('ipcalc.ipcalc') }}">IP Subnetting</a>
+        <a class="button" href="{{ url_for('vlsm.vlsmcalc') }}">VLSM Calc</a>
+    </div>
+{% endblock %}

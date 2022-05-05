@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% block title %}IP Subnetting{% endblock %} Calc App
+{% endblock %}
+{% block content %}
+    <div class="sub">
+        <div class="val">
+            <p>Input: {{ net }}</p>
+        </div>
+        <table class="sub-results">
+        <tr>
+            <td class="first">Address:</td>
+            <td class="second">{{ values[0] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[1] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Netmask:</td>
+            <td class="second">{{ values[2] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[3] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Wildcard:</td>
+            <td class="second">{{ values[4] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[5] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Network:</td>
+            <td class="second">{{ values[6] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[7] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Broadcast:</td>
+            <td class="second">{{ values[14] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[15] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Hostmin:</td>
+            <td class="second">{{ values[10] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[11] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Hostmax:</td>
+            <td class="second">{{ values[12] }}</td>
+            <td class="second"> - </td>
+            <td class="second">{{ values[13] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Hosts/Net:</td>
+            <td class="second">{{ values[8] }}</td>
+        </tr>
+        <tr>
+            <td class="first">Type:</td>
+            <td class="second">{{ values[9] }}</td>
+        </tr>
+        </table>
+    </div>
+    <div class="contenedor-btns">
+        <a class="button" href="{{ url_for('ipcalc.ipcalc') }}">One more</a>
+        <a class="button" href="/">Home</a>
+    </div>
+{% endblock %}

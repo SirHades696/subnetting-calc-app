@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% block title %}VLSM Subnetting{% endblock %} Calc App
+{% endblock %}
+{% block content %}
+    <div class="sub">
+        <div class="val">
+            {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+            <table class="sub-results">
+                <tr>
+                    <td class="first">Input:</td>
+                    <td class="second vlsm">{{ net }}</td>
+                </tr>
+                <tr>
+                    <td class="first">Total available IP addresses:</td>
+                    <td class="second vlsm">{{ tn }}</td>
+                </tr>
+                <tr>
+                    <td class="first">Total IP addresses needed:</td>
+                    <td class="second vlsm">{{ treq }}</td>
+                </tr>
+                <tr>
+                    <td class="first">Available IP addresses in allocated subnets:</td>
+                    <td class="second vlsm">{{ alloc_p }}</td>
+                </tr>
+            </table>
+        </div>
+        <table class="sub-results">
+        <tr>
+            <th class="first">Subnet Number</th>
+            <th class="first">Needed Size</th>
+            <th class="first">Allocated Size</th>
+            <th class="first">Address</th>
+            <th class="first">Mask</th>
+            <th class="first">Dec Mask</th>
+            <th class="first">Assignable Range</th>
+            <th class="first">Broadcast</th>
+        </tr>
+            {% for i,v in networks.items(): %}
+            {% set n_size, alloc, addr, mask, dec_mask, assig_range_min, assig_range_max, bc = v %}
+            <tr>
+                <td class="second vlsm">{{ i }}</td>
+                <td class="second vlsm">{{ n_size }}</td>
+                <td class="second vlsm">{{ alloc }}</td>
+                <td class="second vlsm">{{ addr }}</td>
+                <td class="second vlsm">{{ mask }}</td>
+                <td class="second vlsm">{{ dec_mask }}</td>
+                <td class="second vlsm">{{ assig_range_min + ' - ' + assig_range_max }}</td>
+                <td class="second vlsm">{{ bc }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="contenedor-btns">
+        <a class="button" href="{{ url_for('vlsm.vlsmcalc') }}">One more</a>
+        <a class="button" href="/">Home</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>{% block title%}{% endblock%}</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='/img/connection.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='/style/style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header>
+    <h1 class="header"><center>{% block header %}{% endblock %}</center></h1>
+</header>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div class="made-with">
+    <p>
+        Hecho con &#128150; y con Flask por SirHades696 👽
+    </p>
+    <p>
+        <a href="https://github.com/SirHades696" target="_blank" style="text-decoration: none; color: var(--color3);">GitHub Profile 👽</a>
+    </p>
+    <p>
+        <a href="https://github.com/SirHades696/subnetting-calc-app" target="_blank" style="text-decoration: none; color: var(--color3);">GitHub Repo 👽</a>
+    </p>
+</div>
