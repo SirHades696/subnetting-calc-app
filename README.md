@@ -15,7 +15,7 @@ Todos los recursos usados para el desarrollo se encuentran en: `requirements.txt
 # ¿Cómo ejecutar la aplicación?
 Para inicializar Flask solo es necesario ejecutar el comando
 
-> flask run
+> `flask run`
 
 # Screenshots
 
